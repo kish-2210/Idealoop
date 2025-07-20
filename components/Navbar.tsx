@@ -1,12 +1,11 @@
 import React from 'react'
 import Link from "next/link";
-import Image from "next/image"
 import { auth, signOut, signIn } from '@/auth';
 
 
 const Navbar = async () => {
     const session = await auth();
-    
+
 
     return (
         <>
@@ -36,7 +35,7 @@ const Navbar = async () => {
 
                                 <Link href={`/user/${session?.id}`}>
                                     <span> {session?.user?.name}</span>
-                                    
+
                                 </Link>
                             </>
                         ) : (
